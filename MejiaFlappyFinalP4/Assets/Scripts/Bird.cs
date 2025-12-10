@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bird : MonoBehaviour
+public class Bird : MonoBehaviour {
 
     public float upForce = 200f;
-{
+
     private bool isDead = false;
     private Rigidbody2D rb2d;
     
@@ -26,5 +26,10 @@ public class Bird : MonoBehaviour
                 rb2d.AddForce(new Vector2(0, upForce));
             }
         }
+    }
+
+    void OnCollisionEnter2D ()
+    {
+        isDead = true;
     }
 }
